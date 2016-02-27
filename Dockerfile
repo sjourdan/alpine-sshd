@@ -7,5 +7,4 @@ RUN mkdir /etc/dropbear
 RUN touch /var/log/lastlog
 COPY docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
-EXPOSE 22
 CMD ["dropbear", "-RFEmwg", "-p", "22"]
