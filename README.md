@@ -1,5 +1,10 @@
 # Alpine SSHD (Dropbear)
 
+[![Docker Repository on Quay](https://quay.io/repository/sjourdan/alpine-sshd/status "Docker Repository on Quay")](https://quay.io/repository/sjourdan/alpine-sshd)
+
+![](https://badge.imagelayers.io/sjourdan/alpine-sshd:latest.svg)](https://imagelayers.io/?images=sjourdan/alpine-sshd:latest 'Get your own badge on imagelayers.io')
+
+
 This is a small Alpine-based container using [openssh-sftp-server](https://pkgs.alpinelinux.org/package/main/x86/openssh-sftp-server) and [Dropbear SSH](https://matt.ucc.asn.au/dropbear/dropbear.html).
 
 ## Usage
