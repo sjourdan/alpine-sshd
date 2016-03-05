@@ -14,7 +14,7 @@ It takes 2 variables: `USER` and `PASSWORD`, both in cleartext. Redirect the TCP
     docker run -d \
     -p 2222:22 \
     -e USER=myusername \
-    -p PASSWORD=mypassword \
+    -e PASSWORD=mypassword \
     sjourdan/alpine-sshd
 
 Then you can use this container to SFTP and/or SSH:
