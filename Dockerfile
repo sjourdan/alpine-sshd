@@ -1,4 +1,4 @@
-FROM alpine:3.3
+FROM webhippie/alpine:latest
 MAINTAINER Stephane Jourdan <fasten@fastmail.fm>
 ENV REFRESHED_AT 2016-04-10
 RUN apk update &&\
