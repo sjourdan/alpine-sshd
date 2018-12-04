@@ -5,6 +5,7 @@ ADD rootfs /
 
 WORKDIR /root
 
+ENV PORT 22
 ENV REFRESHED_AT 2016-04-10
 RUN apk update &&\
     apk upgrade && \

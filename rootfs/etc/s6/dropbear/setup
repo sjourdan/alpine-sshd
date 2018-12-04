@@ -14,6 +14,9 @@ if [ -z "$PASSWORD" ]; then
   exit 1
 fi
 
+# If env is not declared anyhow, use port 22
+PORT=${PORT:-22}
+
 echo "Creating user ${USER}"
 adduser -D ${USER} && echo "${USER}:${PASSWORD}" | chpasswd
 echo "Fixing permissions for user ${USER}"
