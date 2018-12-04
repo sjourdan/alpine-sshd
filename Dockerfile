@@ -1,5 +1,10 @@
 FROM webhippie/alpine:latest
 MAINTAINER Stephane Jourdan <fasten@fastmail.fm>
+
+ADD rootfs /
+
+WORKDIR /root
+
 ENV REFRESHED_AT 2016-04-10
 RUN apk update &&\
     apk upgrade && \
@@ -7,6 +12,5 @@ RUN apk update &&\
     rm -rf /var/cache/apk/*
 RUN mkdir /etc/dropbear
 RUN touch /var/log/lastlog
-COPY docker-entrypoint.sh /
-ENTRYPOINT ["/docker-entrypoint.sh"]
-CMD ["dropbear", "-RFEmwg", "-p", "22"]
+
+CMD ["/bin/s6-svscan", "/etc/s6"]

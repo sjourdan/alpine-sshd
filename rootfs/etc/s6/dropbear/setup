@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Checks for USER variable
 if [ -z "$USER" ]; then
@@ -12,8 +12,12 @@ if [ -z "$PASSWORD" ]; then
   exit 1
 fi
 
+if [[ $? -ne 0 ]]
+then
+  /bin/s6-svscanctl -t /etc/s6
+fi
+
 echo "Creating user ${USER}"
 adduser -D ${USER} && echo "${USER}:${PASSWORD}" | chpasswd
 echo "Fixing permissions for user ${USER}"
 chown -R ${USER}:${USER} /home/${USER}
-exec "$@"
