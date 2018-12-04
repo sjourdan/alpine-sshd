@@ -5,6 +5,6 @@ then
   source setup
 fi
 
-INIT="/usr/sbin/dropbear -RFEmwg -p 22"
+INIT="/usr/sbin/dropbear -RFEWwg -p 22"
 
 exec ${INIT}
