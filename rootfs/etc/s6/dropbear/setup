@@ -3,18 +3,15 @@
 # Checks for USER variable
 if [ -z "$USER" ]; then
   echo >&2 'Please set an USER variable (ie.: -e USER=john).'
+  /bin/s6-svscanctl -t /etc/s6
   exit 1
 fi
 
 # Checks for PASSWORD variable
 if [ -z "$PASSWORD" ]; then
   echo >&2 'Please set a PASSWORD variable (ie.: -e PASSWORD=hackme).'
-  exit 1
-fi
-
-if [[ $? -ne 0 ]]
-then
   /bin/s6-svscanctl -t /etc/s6
+  exit 1
 fi
 
 echo "Creating user ${USER}"
