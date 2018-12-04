@@ -17,6 +17,8 @@ It takes 2 variables: `USER` and `PASSWORD`, both in cleartext. Redirect the TCP
     -e PASSWORD=mypassword \
     sjourdan/alpine-sshd
 
+- _Take a look at environment variables for more options_
+
 Then you can use this container to SFTP and/or SSH:
 
 ```
@@ -26,6 +28,14 @@ Connected to 192.168.99.100.
 sftp> pwd
 Remote working directory: /home/user1
 sftp>
+```
+
+## Environment variables
+
+```bash
+ENV USER # Required, username for SSH user
+ENV PASSWORD # Required, password for SSH user
+ENV PORT # Optional, port which dropbear will listen to
 ```
 
 ## Dropbear Notes
