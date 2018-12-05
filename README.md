@@ -46,7 +46,6 @@ Options used in this container:
 -R              Create hostkeys as required
 -F              Don't fork into background
 -E              Log to stderr rather than syslog
--m              Don't display the motd on login
 -w              Disallow root logins
 -g              Disable password logins for root
 ```
